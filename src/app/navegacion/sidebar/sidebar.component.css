@@ -1,0 +1,46 @@
+.barralateral{
+    background-color: #273746;
+    min-width: 300px;
+    min-height: 100vh;
+}
+
+.logo{
+   background-color:  #2471A3;
+   font-weight: 600;
+   margin: 0;
+}
+
+.barralateral a{
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    padding: 25px;
+    color: white;
+    border-bottom: 1px solid black;
+}
+
+
+.barralateral a:hover{
+    background-color: #808B96;
+}
+
+
+@media screen and (max-width: 1300px){
+
+    .barralateral{
+         min-width : auto;
+         display: flex;
+         justify-content: center;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    .barralateral a span{
+        display: none;
+    }
+    
+
+
+}

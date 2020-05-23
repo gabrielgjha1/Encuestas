@@ -1,0 +1,30 @@
+
+
+
+img{
+    min-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: hidden;
+
+}
+
+span{
+    margin-top: 25px; 
+}
+
+.inputs{
+    margin-top: 25px;
+    min-width: 250px;
+    min-height: 40px;
+}
+
+.login{
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 500px;
+    max-height: 800px;
+    overflow: hidden;
+    background: #AEB6BF;
+}

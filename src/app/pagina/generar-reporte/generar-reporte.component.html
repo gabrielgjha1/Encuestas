@@ -1,0 +1,51 @@
+<div class="row  justify-content-center align-content-center animated fadeIn">
+
+    <div class="container" >
+        <app-jumbotron Titulo="Generar reporte" Mensaje="Reporte diario"   ></app-jumbotron>
+    </div>
+
+    <div class="container-fluid">
+        <h2>Formulario Reporte de ventas</h2>
+        <hr>
+        <div class="row">
+        <div class="col">
+    
+            <form>
+                <div class="form-row">
+
+                    <div class="form-group col-6">
+                      <label for="fecha">Fecha</label>
+                      <input type="date" class="form-control" id="fecha" aria-describedby="emailHelp" placeholder="l">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+
+                    <div class="form-group col-6">
+                      <label for="dinero">Dinero Gastado</label>
+                      <input type="number" class="form-control" id="dinero" placeholder="0.00">
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label for="dineroganado">Dinero Ganado</label>
+                        <input type="number" class="form-control" id="dineroganado" placeholder="0.00">
+                      </div>
+
+                      <div class="form-group col-6">
+                        <label for="sucursal">Sucursal</label>
+                        <select class="form-control" name="sucursal" id="sucursal">
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                        </select>
+                      </div>
+
+                </div>
+               
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                <button type="submit" class="btn btn-danger btn-block ">Cancelar</button>
+              </form>
+    
+        </div>
+       </div>
+    </div>
+
+</div>
