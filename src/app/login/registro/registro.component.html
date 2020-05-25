@@ -8,14 +8,22 @@
             <div class="card-body text-center  ">
                 <h5 class="card-title">Crear Usuario</h5>
                 
-                <form action="">
-
+                <form [formGroup]="formulario" ngNativeValidate (ngSubmit)="Registro(formulario)" >
 
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
                         </div>
-                        <input class="form-control inputs " type="text" name="usuario" placeholder="Ingrese usuario" aria-label="Recipient's" aria-describedby="my-addon">
+                        <input class="form-control inputs " formControlName="nombre"  type="text" name="nombre" placeholder="Ingrese Nombre" aria-label="Recipient's" aria-describedby="my-addon">
+                        <small *ngIf="formulario.get('nombre').touched && formulario.get('nombre').hasError('required')  "  id="helpId" class="form-text text-danger">Debe Ingresar un nombre</small>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
+                        </div>
+                        <input class="form-control inputs" formControlName="usuario" type="text" name="usuario" placeholder="Ingrese usuario" aria-label="Recipient's" aria-describedby="my-addon">
+                        <small *ngIf="formulario.get('usuario').touched && formulario.get('usuario').hasError('required')"  id="helpId" class="form-text text-danger">Debe Ingresar un usuario</small>
                     </div>
 
 
@@ -23,36 +31,32 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-envelope-square"></i></span>
                         </div>
-                        <input class="form-control inputs " type="email" name="email" placeholder="Ingrese Correo" aria-label="Recipient's" aria-describedby="my-addon">
+                        <input class="form-control inputs " type="email" formControlName="email" name="email" placeholder="Ingrese Correo" aria-label="Recipient's" aria-describedby="my-addon">
+                        <small *ngIf="formulario.get('email').touched && formulario.get('email').hasError('email')  "  id="helpId" class="form-text text-danger">Debe Ingresar un Email valido</small>
                     </div>
 
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-key"></i></span>
                         </div>
-                        <input class="form-control inputs " type="password" name="password" placeholder="Ingrese contraseña" aria-label="Recipient's" aria-describedby="my-addon">
+                        <input class="form-control inputs " type="password" formControlName="password" name="password" placeholder="Ingrese contraseña" aria-label="Recipient's" aria-describedby="my-addon">
                     </div>
 
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="my-addon"> <i class="fas fa-key"></i></span>
-                        </div>
-                        <input class="form-control inputs " type="password" name="password2" placeholder="Repita contraseña" aria-label="Recipient's" aria-describedby="my-addon">
-                    </div>
-
+              
 
                     <div class="form-check mt-4 mb-3">
-                        <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                        <label for="my-input" class="form-check-label">Aceptar  <a href="">Terminos y condiciones</a></label>
+                        <input id="my-input" formControlName="chek" class="form-check-input" type="checkbox" name="chek" value="true">
+                        <label for="my-input"  class="form-check-label">Aceptar  <a href="">Terminos y condiciones</a></label>
+                        <small *ngIf="formulario.get('chek').touched && formulario.get('chek')  "  id="helpId" class="form-text text-danger">Debe aceptar los terminos</small>
                     </div>
 
-                    <input type="submit" class="btn btn-primary btn-block" value="Enviar"  >
+                    <input type="submit" [disabled]="formulario.invalid" class="btn btn-primary btn-block" value="Enviar"  >
                
 
                 </form>
 
                 <div class="mt-4">
-                    <p> ¿Ya tienes cuenta? <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Registrate</a> </p>
+                    <p> ¿Ya tienes cuenta? <a [routerLink]="['/login']" routerLinkActive="router-link-active" >Inicia Sesión</a> </p>
                 </div>
         
                

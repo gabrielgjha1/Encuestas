@@ -8,9 +8,9 @@
             <nav class=" d-block   justify-content-center align-content-center ">
                 <a [routerLink]="['/reporte']"   ><i class="fas fa-chart-pie mr-3"></i> <span>Ver Reporte</span>  </a>
                 <a [routerLink]="['/greporte']" routerLinkActive="router-link-active" ><i class="fas fa-chart-area mr-3"></i> <span>Genrar reporte</span> </a>
-                <a href=""><i class="fas fa-chart-bar mr-3"></i> <span>Ver Encuestas</span> </a>
-                <a href=""><i class="fas fa-chart-line mr-3"></i><span>Generar encuestas </span></a>
-                <a href=""><i class="fas fa-sign-out-alt mr-3"></i><span>Salir</span></a>
+                <a [routerLink]="['/encuesta']"><i class="fas fa-chart-bar mr-3"></i> <span>Ver Encuestas</span> </a>
+                <a [routerLink]="['/gencuesta']"><i class="fas fa-chart-line mr-3"></i><span>Generar encuestas </span></a>
+                <a [routerLink]="['/login']" (click)="_usuarioService.logout()"   ><i class="fas fa-sign-out-alt mr-3"></i><span>Salir</span></a>
 
             </nav>
 

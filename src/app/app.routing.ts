@@ -7,10 +7,13 @@ import { GenerarEncuestaComponent } from './pagina/generar-encuesta/generar-encu
 import { GenerarReporteComponent } from './pagina/generar-reporte/generar-reporte.component';
 import { VerEncuestaComponent } from './pagina/ver-encuesta/ver-encuesta.component';
 import { PaginaComponent } from './pagina/pagina.component';
+import { LoginGuard } from './servicios/guards/login.guard';
 
 
 const routes: Routes = [
-    {path:'',component:PaginaComponent,
+    {path:'',
+    component:PaginaComponent,
+    canActivate:[LoginGuard],
     children:[ 
     { path: 'reporte', component: ReporteComponent},
     { path: 'gencuesta', component: GenerarEncuestaComponent },

@@ -8,12 +8,12 @@
             <div class="card-body text-center  ">
                 <h5 class="card-title">Login</h5>
                
-               <form action="">
+               <form [formGroup]="formulario" (ngSubmit)="Login(formulario)" action="">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
                         </div>
-                        <input class="form-control inputs redondeado confondo" type="text" name="" placeholder="Usuario" aria-label="Recipient's " aria-describedby="my-addon">
+                        <input class="form-control inputs redondeado confondo"   formControlName="email" type="email" name="email" placeholder="Email" aria-label="Recipient's " aria-describedby="my-addon">
                     </div>
                
 
@@ -23,16 +23,16 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-key"></i></span>
                         </div>
-                        <input class="form-control inputs" type="password" name="" placeholder="Contraseña" aria-label="Recipient's " aria-describedby="my-addon">
+                        <input class="form-control inputs" type="password" name="password" formControlName="password" required  placeholder="Contraseña" aria-label="Recipient's " aria-describedby="my-addon">
                     </div>  
 
                   
 
-                    <input class="btn btn-primary btn-block mt-5" type="text" value="Enviar" >
+                    <input class="btn btn-primary btn-block mt-5" type="submit" value="Enviar" >
 
                     <div class="form-check mt-4">
-                        <input id="my-input" class="form-check-input" type="checkbox" name="" value="true">
-                        <label for="my-input" class="form-check-label">Recuerdame</label>
+                        <input id="my-input" class="form-check-input" required type="checkbox" name="" value="true">
+                        <label for="my-input" name="check"  formControlName="check" class="form-check-label">Recuerdame</label>
                     </div>
 
                 </form>   
