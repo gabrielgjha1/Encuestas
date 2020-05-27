@@ -18,34 +18,39 @@
 
       </div>
 
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-hover table-responsive animated fadeIn ">
+              <thead class="bg-primary">
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Fecha</th>
+                  <th scope="col">Dinero Ganado</th>
+                  <th scope="col">Dinero Gastado</th>
+                  <th scope="col">Sucursal</th>
+                  <th scope="col">Editar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let items of this.reporte" >
+                  <th scope="row">{{items.usuario.nombre}}</th>
+                  <td>{{items.fecha}}</td>
+                  <td>{{items.dineroGan}}$</td>
+                  <td>{{items.dineroGas}}$</td>
+                  <td>{{items.sucursal}}</td>
+                  <td>
+                    <button class="btn btn-danger mr-3 " ><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn btn-success" ><i class="fas fa-edit"></i></button>
+                  </td>
+                </tr>
+                
+              </tbody>
+            </table>
+  
+          </div>
+        </div>
      
-        <table class="table table-hover animated fadeIn ">
-            <thead class="bg-primary">
-              <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Dinero Ganado</th>
-                <th scope="col">Dinero Gastado</th>
-                <th scope="col">Sucursal</th>
-                <th scope="col">Editar</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                  <button class="btn btn-danger mr-3" ><i class="fas fa-trash-alt"></i></button>
-                  <button class="btn btn-success" ><i class="fas fa-edit"></i></button>
-                </td>
-              </tr>
-              
-            </tbody>
-          </table>
-
+      
 
     </div>
     
@@ -56,7 +61,8 @@
         <div class="col">
           
           <h2> Ganancias temporales </h2>
-          <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis deserunt, quae aliquid recusandae culpa in, voluptatum magnam distinctio voluptates sed suscipit voluptatem ex dolor ipsa perspiciatis. Modi ducimus impedit officiis. </p>
+          <p class="text-justify" >En este mes hubo una ganacia total de {{this.Suma}}, donde el dinero total gastado es <span class="text-danger">{{this.negativo}}</span> 
+              Y el dinero ganado <span class="" > {{this.positivo}} </span>   </p>
         </div>
   
       </div>

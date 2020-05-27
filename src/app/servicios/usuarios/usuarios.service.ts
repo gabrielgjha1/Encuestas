@@ -7,9 +7,6 @@ import { Usuario } from 'src/app/modelos/usuarios.models';
 import 'rxjs/add/operator/map';
 
 import 'rxjs/add/operator/catch';
-
-
-import swal from'sweetalert2';
 import { URLs } from 'src/app/config/url';
 import { Route } from '@angular/compiler/src/core';
 import { Observable } from 'rxjs/internal/Observable';

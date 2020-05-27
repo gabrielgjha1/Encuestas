@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var sidebar = require('../modelos/sidebar');
-
+var auteticacionmidelware = require('../middelware/middelware');
 app.get('/',(req,res,nex)=>{
    
     sidebar.find({},(err,sidebar)=>{

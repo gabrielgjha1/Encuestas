@@ -10,37 +10,40 @@
         <div class="row">
         <div class="col">
     
-            <form>
+            <form [formGroup]="formulario" (ngSubmit)="GuardarDatos(formulario.value)">
                 <div class="form-row">
 
-                    <div class="form-group col-6">
+                    <div  class="form-group col-12 col-md-6">
                       <label for="fecha">Fecha</label>
-                      <input type="date" class="form-control" id="fecha" aria-describedby="emailHelp" placeholder="l">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                      <input formControlName="fecha" name="fecha" type="date" class="form-control" id="fecha" aria-describedby="emailHelp" placeholder="l">
+                      <small id="emailHelp"  class="form-text text-muted">Si deja la fecha vacía se tomara el dia actual</small>
                     </div>
 
-                    <div class="form-group col-6">
+                    <div class="form-group col-12 col-md-6">
                       <label for="dinero">Dinero Gastado</label>
-                      <input type="number" class="form-control" id="dinero" placeholder="0.00">
+                      <input formControlName="dineroGas" name="dineroGas" type="number" class="form-control" id="dinero" placeholder="0.00">
+                      <small id="emailHelp" *ngIf="formulario.get('dineroGas').hasError('dineroGas') &&  formulario.get('dineroGas').touched" class="form-text  alert-danger p-1 ">Campo Obligatorio</small>
                     </div>
 
-                    <div class="form-group col-6">
+                    <div class="form-group col-12 col-md-6">
                         <label for="dineroganado">Dinero Ganado</label>
-                        <input type="number" class="form-control" id="dineroganado" placeholder="0.00">
+                        <input type="number" formControlName="dineroGan" class="dineroGan" class="form-control" id="dineroganado" placeholder="0.00">
+                        <small id="emailHelp" *ngIf="formulario.get('dineroGan').hasError('dineroGan') &&  formulario.get('dineroGan').touched" class="form-text  alert-danger p-1 ">Campo Obligatorio</small>
                       </div>
 
-                      <div class="form-group col-6">
+                      <div class="form-group col-12 col-md-6">
                         <label for="sucursal">Sucursal</label>
-                        <select class="form-control" name="sucursal" id="sucursal">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
+                        <select class="form-control"  formControlName="sucursal" name="sucursal" id="sucursal">
+                          <option>Panama</option>
+                          <option>La Chorrera</option>
+                          <option>Torti</option>
                         </select>
+                        <small id="emailHelp" *ngIf="formulario.get('sucursal').hasError('sucursal') &&  formulario.get('sucursal').touched" class="form-text  alert-danger p-1 ">Campo Obligatorio</small>
                       </div>
 
                 </div>
                
-                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                <button type="submit" [disabled]="formulario.invalid" class="btn btn-primary btn-block">Enviar</button>
                 <button type="submit" class="btn btn-danger btn-block ">Cancelar</button>
               </form>
     

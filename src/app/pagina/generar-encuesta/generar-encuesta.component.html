@@ -4,10 +4,15 @@
     </div>
 
     <div class="container-fluid m-5">
-
-        <button class="btn btn-success" (click)="encuesta()" > Agregar encuesta</button>
-
-        <form id="hola" *ngIf="comprobar" #f="ngForm" (ngSubmit)="enviado(f)" >
+        
+        
+            <button class="btn btn-success d-block " [disabled]="desactivar" (click)="encuesta()" > Agregar encuesta</button> 
+            <button *ngIf="desactivar" class="  mt-5 btn btn-danger" (click)="EliminarEncuesta()" > Eliminar encuesta actual  </button>
+ 
+            <span *ngIf="desactivar" class="alert-danger p-2 d-block mt-3"  >Solo puede estar activa una encuesta</span>
+          
+    
+        <form id="hola" *ngIf="comprobar" #f="ngForm" (ngSubmit)="enviado(f.value)" >
             <div class="form-row mt-5">
 
                 <div class="form-group col-12 ">
@@ -21,7 +26,7 @@
                 <div class="form-group col-12" >
                     <label for="campo1">Campo 1</label>
                     <input type="text"
-                    class="form-control "  ngModelname="campo1"  id="campo1" aria-describedby="helpId" placeholder="Ingrese campo 1">
+                    class="form-control "  ngModel name="campo1"  id="campo1" aria-describedby="helpId" placeholder="Ingrese campo 1">
                 </div>
             </div>
 
@@ -45,13 +50,13 @@
                 <div class="form-group col-12" >
                     <label for="campo1">Campo {{item}}</label>
                     <input type="text"
-                    class="form-control " name="campo{{item}}"  id="campo3" ngModel aria-describedby="helpId" placeholder="Ingrese campo 1">
+                    class="form-control " name="campo{{item}}" ngModel  id="campo3" ngModel aria-describedby="helpId" placeholder="Ingrese campo 1">
                 </div>
             </div>
 
 
-
-            <button type="submit" class="btn btn-info btn-block"  >Enviar</button>
+          
+            <button type="submit"  class="btn btn-info btn-block"  >Enviar</button>
 
         </form>
             

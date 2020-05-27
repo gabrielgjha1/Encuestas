@@ -21,6 +21,8 @@ var appRuta = require('./rutas/app');
 var usuarioRuta = require('./rutas/usuarios');
 var loginRuta = require('./rutas/login');
 var sidebarRuta = require('./rutas/sidebar');
+var reporteRuta = require('./rutas/reporte');
+var GenEncuestaRuta = require('./rutas/genEncuesta');
 
 
 app.use(function(req, res, next) {
@@ -49,8 +51,9 @@ mongoose.connection.openUri('mongodb://localhost:27017/encuestas', {
 app.use('/',appRuta);
 app.use('/usuario',usuarioRuta);
 app.use('/login',loginRuta);
-app.use('/sibebar',sidebarRuta)
-
+app.use('/sibebar',sidebarRuta);
+app.use('/reporte',reporteRuta);
+app.use('/genEncuesta',GenEncuestaRuta);
 app.listen(3000,()=>{
 
     console.log('express server puerto 3000 online :D')

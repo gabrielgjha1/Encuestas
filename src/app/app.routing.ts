@@ -8,6 +8,7 @@ import { GenerarReporteComponent } from './pagina/generar-reporte/generar-report
 import { VerEncuestaComponent } from './pagina/ver-encuesta/ver-encuesta.component';
 import { PaginaComponent } from './pagina/pagina.component';
 import { LoginGuard } from './servicios/guards/login.guard';
+import { SidebarGuard } from './servicios/guards/sidebar.guard';
 
 
 const routes: Routes = [
@@ -16,7 +17,7 @@ const routes: Routes = [
     canActivate:[LoginGuard],
     children:[ 
     { path: 'reporte', component: ReporteComponent},
-    { path: 'gencuesta', component: GenerarEncuestaComponent },
+    { path: 'gencuesta', component: GenerarEncuestaComponent,canActivate:[SidebarGuard]},
     { path: 'greporte', component: GenerarReporteComponent },
     { path: 'reporte', component: ReporteComponent },
     { path: 'encuesta', component: VerEncuestaComponent },

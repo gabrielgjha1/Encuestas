@@ -1,1 +1,35 @@
-<p>ver-encuesta works!</p>
+<div class="row  justify-content-center align-content-center">
+
+    <div class="container">
+        
+      <app-jumbotron Titulo="Encuestas Disponibles" Mensaje="Completar encuesta"   ></app-jumbotron>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="display-4">{{titulo}}</h1>
+            <hr>
+
+
+            <div>
+                <form  #f="ngForm" (ngSubmit)="formulario(f.value)" >
+
+                    <div *ngFor="let item of campos;let indice=index"  class="form-check">
+                        <input class="form-check-input" type="radio" ngModel name="campo1" id="campo{{indice}}" value="{{item}}" checked>
+                        <label class="form-check-label" for="campo{{indice}}">
+                        {{item}}
+                        </label>
+                      </div>
+                      
+                      <button class="btn btn-primary btn-block mt-3" type="submit"  > Enviar  </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,18 +1,29 @@
 
-            <div class=" col-auto barralateral p-0 m-0  ">
+            <div class=" col-auto barralateral p-0 m-0 vh-100  ">
               
             <div class="logo text-center p-4 text-white ">
                 <h2>Encuestas</h2>
             </div>
 
-            <nav class=" d-block   justify-content-center align-content-center ">
-                <a [routerLink]="['/reporte']"   ><i class="fas fa-chart-pie mr-3"></i> <span>Ver Reporte</span>  </a>
-                <a [routerLink]="['/greporte']" routerLinkActive="router-link-active" ><i class="fas fa-chart-area mr-3"></i> <span>Genrar reporte</span> </a>
-                <a [routerLink]="['/encuesta']"><i class="fas fa-chart-bar mr-3"></i> <span>Ver Encuestas</span> </a>
-                <a [routerLink]="['/gencuesta']"><i class="fas fa-chart-line mr-3"></i><span>Generar encuestas </span></a>
-                <a [routerLink]="['/login']" (click)="_usuarioService.logout()"   ><i class="fas fa-sign-out-alt mr-3"></i><span>Salir</span></a>
+            <nav   class=" d-block   justify-content-center align-content-center ">
+             
+                <a *ngFor="let item of Sidebar"  routerLink="/{{item.ruta}}" class="d-block"  ><i class="{{item.icono}} mr-3"></i> <span>{{item.nombre}}</span>  </a>
+
 
             </nav>
-
         </div>
 
+  <!--
+              
+            
+                    <a [routerLink]="['/reporte']"   ><i class="fas fa-chart-pie mr-3"></i> <span>Ver Reporte</span>  </a>
+            
+                    <a  [routerLink]="['/{{item.ruta}}']"   ><i class="{{item.icono}}"></i> <span>{{item.nombre}}</span>  </a>
+                    <a [routerLink]="['/greporte']" routerLinkActive="router-link-active" ><i class="fas fa-chart-area mr-3"></i> <span>Genrar reporte</span> </a>
+                    <a [routerLink]="['/encuesta']"><i class="fas fa-chart-bar mr-3"></i> <span>Ver Encuestas</span> </a>
+                    <a [routerLink]="['/gencuesta']"><i class="fas fa-chart-line mr-3"></i><span>Generar encuestas </span></a>
+
+                    <a [routerLink]="['/login']" (click)="_usuarioService.logout()"   ><i class="fas fa-sign-out-alt mr-3"></i><span>Salir</span></a>
+                -->
+            
+            

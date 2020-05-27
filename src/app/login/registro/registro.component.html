@@ -47,7 +47,7 @@
                     <div class="form-check mt-4 mb-3">
                         <input id="my-input" formControlName="chek" class="form-check-input" type="checkbox" name="chek" value="true">
                         <label for="my-input"  class="form-check-label">Aceptar  <a href="">Terminos y condiciones</a></label>
-                        <small *ngIf="formulario.get('chek').touched && formulario.get('chek')  "  id="helpId" class="form-text text-danger">Debe aceptar los terminos</small>
+                        <small *ngIf="formulario.get('chek').touched && formulario.get('chek').hasError('chek')  "  id="helpId" class="form-text text-danger">Debe aceptar los terminos</small>
                     </div>
 
                     <input type="submit" [disabled]="formulario.invalid" class="btn btn-primary btn-block" value="Enviar"  >
