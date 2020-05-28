@@ -23,6 +23,7 @@ var loginRuta = require('./rutas/login');
 var sidebarRuta = require('./rutas/sidebar');
 var reporteRuta = require('./rutas/reporte');
 var GenEncuestaRuta = require('./rutas/genEncuesta');
+var DatosEncuestaRuta = require('./rutas/DatosEncuesta');
 
 
 app.use(function(req, res, next) {
@@ -54,6 +55,7 @@ app.use('/login',loginRuta);
 app.use('/sibebar',sidebarRuta);
 app.use('/reporte',reporteRuta);
 app.use('/genEncuesta',GenEncuestaRuta);
+app.use('/datosEncuesta',DatosEncuestaRuta);
 app.listen(3000,()=>{
 
     console.log('express server puerto 3000 online :D')

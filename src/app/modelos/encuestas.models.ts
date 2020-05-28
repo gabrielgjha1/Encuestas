@@ -1,5 +1,5 @@
 export class Encuestas{
 
-    constructor(public titulo:string, public campo:string[]){}
+    constructor(public titulo?:String, public campo?:String[],public data?:String,public encuesta?:String){}
 
 }

@@ -9,7 +9,7 @@ import { VerEncuestaComponent } from './pagina/ver-encuesta/ver-encuesta.compone
 import { PaginaComponent } from './pagina/pagina.component';
 import { LoginGuard } from './servicios/guards/login.guard';
 import { SidebarGuard } from './servicios/guards/sidebar.guard';
-
+import { VergraficasComponent } from './pagina/vergraficas/vergraficas.component';
 
 const routes: Routes = [
     {path:'',
@@ -21,6 +21,7 @@ const routes: Routes = [
     { path: 'greporte', component: GenerarReporteComponent },
     { path: 'reporte', component: ReporteComponent },
     { path: 'encuesta', component: VerEncuestaComponent },
+    { path: 'verGrafica', component: VergraficasComponent,canActivate:[SidebarGuard] },
     { path: '', redirectTo:'/reporte',pathMatch:'full' }
     ]
 

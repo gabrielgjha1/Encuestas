@@ -8,8 +8,11 @@
 
 </div>
 
+<div  class="alert alert-danger" *ngIf="!comprobar" >
+    <p>Buen trabajo ya voto</p>
+</div>
 
-<div class="container">
+<div *ngIf="comprobar" class="container">
     <div class="row">
         <div class="col">
             <h1 class="display-4">{{titulo}}</h1>
@@ -20,7 +23,7 @@
                 <form  #f="ngForm" (ngSubmit)="formulario(f.value)" >
 
                     <div *ngFor="let item of campos;let indice=index"  class="form-check">
-                        <input class="form-check-input" type="radio" ngModel name="campo1" id="campo{{indice}}" value="{{item}}" checked>
+                        <input class="form-check-input" type="radio" [(ngModel)]="campo" name="campo1" id="campo{{indice}}" value="{{item}}" checked>
                         <label class="form-check-label" for="campo{{indice}}">
                         {{item}}
                         </label>
@@ -29,7 +32,7 @@
                       <button class="btn btn-primary btn-block mt-3" type="submit"  > Enviar  </button>
                 </form>
             </div>
-            
+       
         </div>
     </div>
 </div>

@@ -22,7 +22,8 @@ import { UsuariosService } from './servicios/usuarios/usuarios.service';
 import { HttpClientModule} from "@angular/common/http";
 //formularios
 import {  ReactiveFormsModule } from '@angular/forms';
-
+import { ChartsModule } from 'ng2-charts';
+import { VergraficasComponent } from './pagina/vergraficas/vergraficas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,14 +35,16 @@ import {  ReactiveFormsModule } from '@angular/forms';
     VerEncuestaComponent,
     GenerarEncuestaComponent,
     PaginaComponent,
-    JumbotronComponent
+    JumbotronComponent,
+    VergraficasComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     routing,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
     
   ],
   providers: [appRoutingProviders,UsuariosService],
