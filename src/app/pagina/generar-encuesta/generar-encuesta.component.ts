@@ -18,6 +18,7 @@ export class GenerarEncuestaComponent implements OnInit {
   campos:string[]=[];
   desactivar:boolean=false;
   id:string="";
+  
   constructor(public _EncuestaService:EncuestasService) { }
 
   ngOnInit(): void {
@@ -134,9 +135,17 @@ traerDatos(){
        
         this._EncuestaService.Eliminar(this.id).subscribe(resp=>{
          console.log(resp);
-         location.reload();
+         
 
       });
+
+      this._EncuestaService.ELiminarDatosUsuario().subscribe(resp=>{
+
+        console.log(resp);
+        location.reload();
+        
+      });
+
       }
       
     })

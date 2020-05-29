@@ -40,7 +40,9 @@ export class VerEncuestaComponent implements OnInit {
 
 
   formulario(f){
+    
 
+   
     let encueta = new Encuestas(null,null,this.campo,this.id)
 
     this._EncuestaService.GuardadoDatosUsuario(encueta).subscribe(resp=>{
@@ -52,6 +54,5 @@ export class VerEncuestaComponent implements OnInit {
       this.comprobar=false;
     })
 
-  }
-
+}
 }

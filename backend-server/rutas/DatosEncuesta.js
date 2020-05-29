@@ -3,7 +3,6 @@ var app = express();
 var datosEncuesta = require('../modelos/DatosEncuesta');
 var auteticacionmidelware = require('../middelware/middelware');
 
-
 app.get('/',(req,res,nex)=>{
     
     datosEncuesta.find({},'data').populate('usuario','nombre').populate('encuesta')
@@ -32,6 +31,7 @@ app.get('/',(req,res,nex)=>{
 
 
 });
+
 
 
 app.post('/',auteticacionmidelware.verificartoken,(req,res)=>{
@@ -68,6 +68,41 @@ app.post('/',auteticacionmidelware.verificartoken,(req,res)=>{
 
 
 });
+
+
+
+app.delete('/',(req,res)=>{
+
+      datosEncuesta.deleteMany( {} ,(err,datosEncuesta)=>{
+
+
+        if (err){
+
+            return  res.status(500).json({
+    
+                status:true,
+                mensaje:'error',
+                err
+            });
+    
+        }
+    
+    
+    
+      return  res.status(200).json({
+    
+            status:true,
+            datosEncuesta
+    
+        });
+
+
+        
+
+    });
+
+});
+
 
 
 module.exports=app;

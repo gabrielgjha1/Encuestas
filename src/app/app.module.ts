@@ -24,6 +24,7 @@ import { HttpClientModule} from "@angular/common/http";
 import {  ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { VergraficasComponent } from './pagina/vergraficas/vergraficas.component';
+import { GraficasComponent } from './componentes/graficas/graficas/graficas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { VergraficasComponent } from './pagina/vergraficas/vergraficas.component
     GenerarEncuestaComponent,
     PaginaComponent,
     JumbotronComponent,
-    VergraficasComponent
+    VergraficasComponent,
+    GraficasComponent
   ],
   imports: [
     BrowserModule,

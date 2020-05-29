@@ -33,6 +33,7 @@ export class EncuestasService {
     return this.http.delete(url);
   }
 
+  //Datos de la encuestas hechas por los usuarios
   GuardadoDatosUsuario(encuesta:Encuestas){
     var url = URLs+'datosEncuesta?token='+this._usuarioService.token;
 
@@ -41,11 +42,20 @@ export class EncuestasService {
 
   }
 
+  //Datos de la encuestas hechas por los usuarios
   TraerDatosUsuario(){
     var url = URLs+'datosEncuesta';
 
     return this.http.get(url)
 
+  }
+
+  //Eliminar Datos de la encuestas hechas por los usuarios
+
+  ELiminarDatosUsuario(){
+    var url = URLs+'datosEncuesta';
+
+    return this.http.delete(url);
   }
 
 }
