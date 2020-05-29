@@ -3,13 +3,12 @@ import Swal from 'sweetalert2';
 import { EncuestasService } from 'src/app/servicios/encuestas/encuestas.service';
 import { Encuestas } from 'src/app/modelos/encuestas.models';
 
-
-
 @Component({
   selector: 'app-generar-encuesta',
   templateUrl: './generar-encuesta.component.html',
   styleUrls: ['./generar-encuesta.component.css']
 })
+
 export class GenerarEncuestaComponent implements OnInit {
 
   comprobar:boolean=false;
@@ -43,7 +42,6 @@ export class GenerarEncuestaComponent implements OnInit {
     this.contador=this.contador+numero;
     if (numero<0){
       this.arreglo.pop();
-      console.log(this.arreglo);
       return;
     }
 
@@ -51,16 +49,20 @@ export class GenerarEncuestaComponent implements OnInit {
 
   }
 
-
+// tre las encuesta para verificar si hay alguna disponible
+// si hay disponible desactivar la generacion de encuesta
 traerDatos(){
 
   this._EncuestaService.TraerDatos().subscribe((resp:any)=>{
+    if(resp.genEncuesta.length !=0){
 
-    this.id= resp.genEncuesta[0]._id;
+      this.id= resp.genEncuesta[0]._id;  
+    
+      if (resp.genEncuesta.length>=1){
+        this.desactivar=true;
 
-    console.log(this.id);
-    if (resp.genEncuesta.length>=1){
-      this.desactivar=true;
+      }
+
     }
 
   });
@@ -72,7 +74,6 @@ traerDatos(){
 //guardar los datos en la base de datos
   enviado(f){
     
-    console.log(f)
 // guarda los 4 campos
     this.campos.push(f.campo1,f.campo2,f.campo3,f.campo4);
 
@@ -83,8 +84,6 @@ traerDatos(){
 
 
     let encuestas = new Encuestas (f.titulo,filtrado);
- 
-    console.log(encuestas)
 
     Swal.fire({
       title: 'Esta seguro?',
@@ -134,14 +133,12 @@ traerDatos(){
 
        
         this._EncuestaService.Eliminar(this.id).subscribe(resp=>{
-         console.log(resp);
+    
          
 
       });
 
       this._EncuestaService.ELiminarDatosUsuario().subscribe(resp=>{
-
-        console.log(resp);
         location.reload();
         
       });

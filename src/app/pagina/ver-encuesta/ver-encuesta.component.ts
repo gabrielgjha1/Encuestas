@@ -16,7 +16,7 @@ export class VerEncuestaComponent implements OnInit {
   campos:string[]=[];
   id:string="";
   campo:string;
-  comprobar:boolean=true;
+  comprobar:boolean=false;
 
   constructor(public _EncuestaService:EncuestasService) { }
 
@@ -24,13 +24,20 @@ export class VerEncuestaComponent implements OnInit {
   this.traerEncuesta()
   }
 
+  // trae la encuesta generada por el administrador
   traerEncuesta(){
 
+
     this._EncuestaService.TraerDatos().subscribe((resp:any)=>{
-      this.titulo=resp.genEncuesta[0].titulo;
-      this.campos=resp.genEncuesta[0].campo;
-      this.id=resp.genEncuesta[0]._id;
-      console.log(this.id)
+      // verifica si hay alguna encuesta o no 
+
+      if(resp.genEncuesta.length!=0){
+        this.comprobar=true;
+        this.titulo=resp.genEncuesta[0].titulo;
+        this.campos=resp.genEncuesta[0].campo;
+        this.id=resp.genEncuesta[0]._id;
+
+      }     
      
     })  
 
@@ -40,8 +47,6 @@ export class VerEncuestaComponent implements OnInit {
 
 
   formulario(f){
-    
-
    
     let encueta = new Encuestas(null,null,this.campo,this.id)
 

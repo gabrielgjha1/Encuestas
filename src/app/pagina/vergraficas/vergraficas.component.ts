@@ -32,8 +32,13 @@ export class VergraficasComponent implements OnInit {
   TraerGrafica(){
   
     this._EcuestaService.TraerDatosUsuario().subscribe((resp:any)=>{
-  
-      this.MostrarEnGrafico(resp)
+      
+     if(resp.datosEncuesta.length !=0){
+
+       this.MostrarEnGrafico(resp)
+
+     }
+
       
 
     });
@@ -49,7 +54,7 @@ export class VergraficasComponent implements OnInit {
       
         })
       // aqui estan los campos
-        console.log(this.campos)
+        //console.log(this.campos)
         
       //guarda los datos
         resp.datosEncuesta.map((elementos) => { 
@@ -57,7 +62,7 @@ export class VergraficasComponent implements OnInit {
       
         })
       // aqui estan los datos
-        console.log(this.data);
+       // console.log(this.data);
       
        let contador = 0;
 
@@ -77,7 +82,7 @@ export class VergraficasComponent implements OnInit {
 
   });    
 
-  console.log(this.datas)
+  //console.log(this.datas)
 
     
   }

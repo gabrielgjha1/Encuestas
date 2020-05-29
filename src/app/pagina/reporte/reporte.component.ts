@@ -44,7 +44,7 @@ export class ReporteComponent implements OnInit {
       
     });
     this.Suma=this.positivo-this.negativo;
-    console.log(this.Suma)
+  
 
   }
 
