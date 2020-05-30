@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReportesService } from 'src/app/servicios/reporte/reportes.service';
 import { Reporte } from 'src/app/modelos/reporte.models';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reporte',
@@ -45,6 +46,39 @@ export class ReporteComponent implements OnInit {
     });
     this.Suma=this.positivo-this.negativo;
   
+
+  }
+
+
+  EliminarReporte(id:string){
+
+
+
+    Swal.fire({
+      title: 'Estas seguro que desea eliminar ?',
+      text: "No hay vuelta atras!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si,Borrar!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Borrado!',
+          'EL archivo a sido borrado.',
+          'success'
+          )
+        }
+        this._reporteService.EliminarDatos(id).subscribe(resp=>{
+    
+          this.TraerReportes();
+    
+        });
+    })
+
+
+    console.log(id)
 
   }
 

@@ -39,7 +39,7 @@
                   <td>{{items.dineroGas}}$</td>
                   <td>{{items.sucursal}}</td>
                   <td>
-                    <button class="btn btn-danger mr-3 " ><i class="fas fa-trash-alt"></i></button>
+                    <button (click)="EliminarReporte(items.usuario._id)"  class="btn btn-danger mr-3 " ><i class="fas fa-trash-alt"></i></button>
                     <button class="btn btn-success" ><i class="fas fa-edit"></i></button>
                   </td>
                 </tr>
@@ -59,10 +59,14 @@
   
       <div class="row mt-5 text-center alert-info m-3 ">
         <div class="col">
-          
           <h2> Ganancias temporales </h2>
-          <p class="text-justify" >En este mes hubo una ganacia total de {{this.Suma}}, donde el dinero total gastado es <span class="text-danger">{{this.negativo}}</span> 
-              Y el dinero ganado <span class="" > {{this.positivo}} </span>   </p>
+          
+          <p class="text-justify mt-2">
+            El dinero Ganado Este Mes Es: <b>{{this.positivo}}</b>  <br>
+            El Dinero Gastado Este Mes: <span class="text-danger">{{this.negativo}}</span><br>
+            Las ganancias de la empresa son: <b>{{this.Suma}}</b> 
+
+          </p>
         </div>
   
       </div>

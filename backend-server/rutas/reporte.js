@@ -69,36 +69,6 @@ app.post('/',auteticacionmidelware.verificartoken,(req,res)=>{
 });
 
 
-app.delete('/:id',auteticacionmidelware.verificartoken,(req,res)=>{
-    var _id = req.params.id;
-    
-    reporte.findByIdAndRemove(id,(err,reporte)=>{
-
-        if (err){
-            return res.status(500).json({
-                status:false,
-                mensaje:'Error',
-                err
-            })
-        }
-
-        if (!reporte) {
-            return res.status(400).json({
-                status:false,
-                mensaje:'El Usuario No Existe',
-                reporte
-            })
-        }
-
-        return res.status(200).json({
-            status:true,
-            reporte
-        })
-
-    });
-
-
-});
 
 
 app.put('/:id',auteticacionmidelware.verificartoken,(req,res)=>{
@@ -135,6 +105,39 @@ app.put('/:id',auteticacionmidelware.verificartoken,(req,res)=>{
 
 
 });
+
+
+app.delete('/:id',auteticacionmidelware.verificartoken,(req,res)=>{
+    var _id = req.params.id;
+    console.log(_id);
+    reporte.findOneAndDelete(_id,(err,reporte)=>{
+
+        if (err){
+            return res.status(500).json({
+                status:false,
+                mensaje:'Error',
+                err
+            })
+        }
+
+        if (!reporte) {
+            return res.status(400).json({
+                status:false,
+                mensaje:'El Reporte No Existe',
+                reporte
+            })
+        }
+
+        return res.status(200).json({
+            status:true,
+            reporte
+        })
+
+    });
+
+
+});
+
 
 
 

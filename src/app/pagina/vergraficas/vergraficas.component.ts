@@ -3,6 +3,7 @@ import { EncuestasService } from 'src/app/servicios/encuestas/encuestas.service'
 
 import { ChartType } from 'chart.js';
 import { MultiDataSet, Label } from 'ng2-charts';
+import { Encuestas } from 'src/app/modelos/encuestas.models';
 
 @Component({
   selector: 'app-vergraficas',
@@ -14,9 +15,7 @@ export class VergraficasComponent implements OnInit {
   data:string[]=[];
   campos:string[]=[];
   datas:number[]=[];
-
-  public doughnutChartLabels: Label[] = [];
-  public doughnutChartData: MultiDataSet = [];
+  usuarios:Encuestas[]=[];
 
   public doughnutChartType: ChartType = 'doughnut';
 
@@ -29,6 +28,9 @@ export class VergraficasComponent implements OnInit {
   }
 
 
+  //traer Informacion de los participantes
+ 
+
   TraerGrafica(){
   
     this._EcuestaService.TraerDatosUsuario().subscribe((resp:any)=>{
@@ -36,6 +38,7 @@ export class VergraficasComponent implements OnInit {
      if(resp.datosEncuesta.length !=0){
 
        this.MostrarEnGrafico(resp)
+       this.usuarios=resp.datosEncuesta;
 
      }
 
@@ -82,13 +85,10 @@ export class VergraficasComponent implements OnInit {
 
   });    
 
-  //console.log(this.datas)
-
     
   }
 
 
-  
   
 
   
