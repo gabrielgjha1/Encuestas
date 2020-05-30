@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "cd ANGULAR_APP_FOLDER && npm install",
+    "preinstall": "npm install -g angular-cli",
+    "postinstall": "ng build --aot -prod" 
   },
   "private": true,
   "dependencies": {
@@ -32,11 +35,11 @@
     "rxjs-compat": "^6.5.5",
     "sweetalert2": "^9.13.1",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "typescript": "~3.7.5"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900.3",
- 
     "@angular/language-service": "~9.0.2",
     "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
