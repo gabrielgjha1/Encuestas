@@ -3,7 +3,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 
 
-
+const port = process.env.PORT || 3000;
 // inicializar variables
 var app = express();
 
@@ -56,9 +56,9 @@ app.use('/sibebar',sidebarRuta);
 app.use('/reporte',reporteRuta);
 app.use('/genEncuesta',GenEncuestaRuta);
 app.use('/datosEncuesta',DatosEncuestaRuta);
-app.listen(3000,()=>{
+app.listen(port,()=>{
 
-    console.log('express server puerto 3000 online :D')
+    console.log('express server puerto 3000 online :D'+port)
 
 });
 
