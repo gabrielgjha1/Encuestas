@@ -1,7 +1,7 @@
 // Require
 var express = require('express');
 var mongoose = require('mongoose');
-
+const path = require('path');
 
 const port = process.env.PORT || 3000;
 // inicializar variables
@@ -15,6 +15,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+app.use(express.static(__dirname + '/dist/sistem-encuesta'))
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/dist/sistem-encuesta/index.html'));
+  });
 
 //importar rutas 
 var appRuta = require('./rutas/app');
