@@ -3,20 +3,22 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node app.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot --prod"
   },
+  "description": "Servidor Backend para encuestas",
+  "main": "index.js",
   "private": true,
   "dependencies": {
-    "@angular/animations": "~9.0.2",
     "@angular-devkit/build-angular": "^0.900.7",
+    "@angular/animations": "~9.0.2",
+    "@angular/cli": "~9.0.3",
     "@angular/common": "~9.0.2",
     "@angular/compiler": "~9.0.2",
-    "@angular/cli": "~9.0.3",
     "@angular/compiler-cli": "~9.0.2",
     "@angular/core": "~9.0.2",
     "@angular/forms": "~9.0.2",
@@ -24,9 +26,15 @@
     "@angular/platform-browser-dynamic": "~9.0.2",
     "@angular/router": "~9.0.2",
     "@fortawesome/fontawesome-free": "^5.13.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.16",
     "ng2-charts": "^2.3.2",
     "ngx-spinner": "^9.0.2",
     "popper.js": "^1.16.1",
@@ -34,8 +42,8 @@
     "rxjs-compat": "^6.5.5",
     "sweetalert2": "^9.13.1",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2",
-    "typescript": "~3.7.5"
+    "typescript": "~3.7.5",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.900.7",
@@ -53,11 +61,14 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
+    "nodemon": "^2.0.4",
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~5.18.0",
     "typescript": "~3.7.5"
   },
+  "author": "Gabriel Hernandez",
+  "license": "ISC",
   "engines": {
     "node": "~12.16.1",
     "npm": "~6.13.4"
