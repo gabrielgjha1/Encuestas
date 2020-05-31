@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 app.use(express.static(path.join(__dirname, 'dist/SistemEncuesta')));
 
 //Any routes will be redirected to the angular app
-app.get('*', function(req, res) {
+app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'dist/SistemEncuesta/index.html'));
 });
 
