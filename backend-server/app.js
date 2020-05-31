@@ -14,10 +14,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-
-var distDir = __dirname + "/dist/";
-app.use(express.static(distDir));
-
 //importar rutas 
 var appRuta = require('./rutas/app');
 var usuarioRuta = require('./rutas/usuarios');
@@ -36,11 +32,11 @@ app.use(function(req, res, next) {
   });
 
 
-app.use(express.static(path.join(__dirname, 'dist/sistem-encuesta')));
+app.use(express.static(path.join(__dirname, '../dist/sistem-encuesta')));
 
 //Any routes will be redirected to the angular app
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/sistem-encuesta/index.html'));
+    res.sendFile(path.join(__dirname, '../dist/sistem-encuesta/index.html'));
 });
 
 //conecxion a la base de datos
