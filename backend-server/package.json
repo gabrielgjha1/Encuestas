@@ -4,7 +4,7 @@
   "description": "Servidor Backend para encuestas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js ",
+    "start": " node app.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Gabriel Hernandez",
@@ -16,6 +16,9 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.15"
   },
+  "engines": {
+    "node": "12.16.1"
+    },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }

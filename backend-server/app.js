@@ -3,10 +3,10 @@ var express = require('express');
 var mongoose = require('mongoose');
 const path = require('path');
 
-const port = process.env.PORT || 3000;
+
 // inicializar variables
 var app = express();
-
+var port = process.env.PORT || 3000;
 //body parser 
 var bodyParser = require('body-parser');
 // parse application/x-www-form-urlencoded
