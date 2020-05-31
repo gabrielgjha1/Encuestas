@@ -14,13 +14,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json())
-/*
-app.use(express.static(__dirname + '/dist/sistem-encuesta'))
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/dist/sistem-encuesta/index.html'));
-  });
-*/
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 //importar rutas 
 var appRuta = require('./rutas/app');
 var usuarioRuta = require('./rutas/usuarios');
