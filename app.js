@@ -39,7 +39,7 @@ app.get('/', function(req, res) {
 });
 
 //conecxion a la base de datos
-
+//
 mongoose.connection.openUri('mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6', {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
