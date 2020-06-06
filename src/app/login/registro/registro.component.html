@@ -9,17 +9,22 @@
                 <h5 class="card-title">Crear Usuario</h5>
                 
                 <form [formGroup]="formulario" ngNativeValidate (ngSubmit)="Registro(formulario)" >
+                    <div class="row">
+                <div class="col">
 
+
+                    
                     <div class="input-group">
-                        <div class="input-group-prepend">
+                        <div class=" ocultar input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
                         </div>
                         <input class="form-control inputs " formControlName="nombre"  type="text" name="nombre" placeholder="Ingrese Nombre" aria-label="Recipient's" aria-describedby="my-addon">
                         <small *ngIf="formulario.get('nombre').touched && formulario.get('nombre').hasError('required')  "  id="helpId" class="form-text text-danger">Debe Ingresar un nombre</small>
                     </div>
-
+                </div>
+                </div>
                     <div class="input-group">
-                        <div class="input-group-prepend">
+                        <div class=" ocultar input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
                         </div>
                         <input class="form-control inputs" formControlName="usuario" type="text" name="usuario" placeholder="Ingrese usuario" aria-label="Recipient's" aria-describedby="my-addon">
@@ -28,15 +33,15 @@
 
 
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="my-addon"> <i class="fas fa-envelope-square"></i></span>
+                        <div class=" ocultar input-group-prepend">
+                            <span class="  input-group-text" id="my-addon"> <i class="fas fa-envelope-square"></i></span>
                         </div>
                         <input class="form-control inputs " type="email" formControlName="email" name="email" placeholder="Ingrese Correo" aria-label="Recipient's" aria-describedby="my-addon">
                         <small *ngIf="formulario.get('email').touched && formulario.get('email').hasError('email')  "  id="helpId" class="form-text text-danger">Debe Ingresar un Email valido</small>
                     </div>
 
                     <div class="input-group">
-                        <div class="input-group-prepend">
+                        <div class=" ocultar input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-key"></i></span>
                         </div>
                         <input class="form-control inputs " type="password" formControlName="password" name="password" placeholder="Ingrese contraseña" aria-label="Recipient's" aria-describedby="my-addon">

@@ -64,3 +64,20 @@
    }
 
 }
+
+@media screen and (max-width: 450px){
+
+    .barralateral a{
+        padding: 10px;
+        border-bottom: 0px;
+       
+    
+       }
+    
+    .barralateral{
+        min-width: 100vw;
+        min-height: 56px;
+        border-bottom: 0px;
+   }
+
+}

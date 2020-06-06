@@ -32,3 +32,9 @@ img{
         min-height: 100vh;
     }
 }
+
+@media screen and (max-width: 425px){
+    .ocultar{
+        display: none;
+    }
+}

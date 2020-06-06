@@ -10,7 +10,7 @@
                
                <form [formGroup]="formulario" (ngSubmit)="Login(formulario)" action="">
                     <div class="input-group">
-                        <div class="input-group-prepend">
+                        <div class=" ocultar input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-user"></i></span>
                         </div>
                         <input class="form-control inputs redondeado confondo"   formControlName="email" type="email" name="email" placeholder="Email" aria-label="Recipient's " aria-describedby="my-addon">
@@ -20,7 +20,7 @@
 
                
                     <div class="input-group mt-5 ">
-                        <div class="input-group-prepend">
+                        <div class=" ocultar  input-group-prepend">
                             <span class="input-group-text" id="my-addon"> <i class="fas fa-key"></i></span>
                         </div>
                         <input class="form-control inputs" type="password" name="password" formControlName="password" required  placeholder="Contraseña" aria-label="Recipient's " aria-describedby="my-addon">

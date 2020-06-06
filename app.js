@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 
 //conecxion a la base de datos'mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6'
 //'mongodb://localhost:27017/encuestas'
-mongoose.connection.openUri('mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6', {
+mongoose.connection.openUri('mongodb://localhost:27017/encuestas', {
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useCreateIndex: true
