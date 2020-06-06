@@ -25,3 +25,10 @@ img{
     overflow: hidden;
     background: #AEB6BF;
 }
+
+@media screen and (max-width: 575px){
+    .login{
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+}

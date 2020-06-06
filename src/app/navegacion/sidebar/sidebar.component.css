@@ -12,7 +12,7 @@
 
 .barralateral a{
     text-decoration: none;
-    display: block;
+    
     font-size: 20px;
     padding: 25px;
     color: white;
@@ -39,8 +39,28 @@
 
     .barralateral a span{
         display: none;
+       
+      
     }
     
 
+
+}
+
+
+@media screen and (max-width: 575px){
+
+    .barralateral a{
+        padding: 19px;
+        border-bottom: 0px;
+       
+    
+       }
+    
+    .barralateral{
+        min-width: 100vw;
+        min-height: 56px;
+        border-bottom: 0px;
+   }
 
 }
