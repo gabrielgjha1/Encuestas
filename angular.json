@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "SistemEncuesta": {
@@ -22,20 +22,17 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-             
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.css"
-          
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/popper.js/dist/umd/popper.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js",
               "node_modules/@fortawesome/fontawesome-free/js/all.js"
-
             ]
           },
           "configurations": {
@@ -129,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SistemEncuesta"
+    }
+  },
+  "defaultProject": "SistemEncuesta",
+  "cli": {
+    "analytics": "98caf807-f1a4-487d-8dda-39893c647265"
+  }
 }

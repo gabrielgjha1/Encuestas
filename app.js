@@ -53,7 +53,7 @@ app.use(function(req, res, next) {
     app.use('/usuario',usuarioRuta);
     app.use('/login',loginRuta);
     app.use('/sibebar',sidebarRuta);
-    app.use('/reporte',reporteRuta);
+    app.use('/reportes',reporteRuta);
     app.use('/genEncuesta',GenEncuestaRuta);
     app.use('/datosEncuesta',DatosEncuestaRuta);
     

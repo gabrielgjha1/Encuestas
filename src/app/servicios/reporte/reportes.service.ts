@@ -23,7 +23,7 @@ export class ReportesService {
 
    TraerReportes(){
 
-    let url=URLs+'reporte';
+    let url=URLs+'reportes';
 
     return this.http.get(url);
     
@@ -32,7 +32,7 @@ export class ReportesService {
 
    GuardarDAtos(reporte:Reporte){
 
-    let url=URLs+'reporte?token='+this._UsuarioService.token;
+    let url=URLs+'reportes?token='+this._UsuarioService.token;
     return this.http.post(url,reporte).catch(err=>{
       console.log(err);
       Swal.fire({
@@ -50,7 +50,7 @@ export class ReportesService {
 
    EliminarDatos(id:string){
      
-    let url=URLs+'reporte/'+id;
+    let url=URLs+'reportes/'+id;
      url= url+'?token='+this._UsuarioService.token
     console.log(url)
     return this.http.delete(url).catch(err=>{
