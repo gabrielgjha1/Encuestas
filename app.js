@@ -31,34 +31,37 @@ app.use(function(req, res, next) {
   });
 
 
-app.use(express.static(path.join(__dirname, 'dist/SistemEncuesta')));
-
-//Any routes will be redirected to the angular app
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'dist/SistemEncuesta/index.html'));
-});
-
-//conecxion a la base de datos'mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6'
-//'mongodb://localhost:27017/encuestas'
-mongoose.connection.openUri('mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6', {
-    useNewUrlParser: true, 
-    useUnifiedTopology: true, 
-    useCreateIndex: true
-}, (err, res) => {
-    if(err) throw err;
- 
-    console.log('Database conection: \x1b[32m%s\x1b[0m', 'ONLINE');
-})
-
-
-// Rutas 
-app.use('/',appRuta);
-app.use('/usuario',usuarioRuta);
-app.use('/login',loginRuta);
-app.use('/sibebar',sidebarRuta);
-app.use('/reporte',reporteRuta);
-app.use('/genEncuesta',GenEncuestaRuta);
-app.use('/datosEncuesta',DatosEncuestaRuta);
+  app.use(express.static(path.join(__dirname, 'dist/SistemEncuesta')));
+  
+  //Any routes will be redirected to the angular app
+  
+  //conecxion a la base de datos'mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6'
+  //'mongodb://localhost:27017/encuestas'
+  mongoose.connection.openUri('mongodb://snak910:gabriel123@ds045627.mlab.com:45627/heroku_3mmjzsb6', {
+      useNewUrlParser: true, 
+      useUnifiedTopology: true, 
+      useCreateIndex: true
+    }, (err, res) => {
+        if(err) throw err;
+        
+        console.log('Database conection: \x1b[32m%s\x1b[0m', 'ONLINE');
+    })
+    
+    
+    // Rutas 
+    app.use('/',appRuta);
+    app.use('/usuario',usuarioRuta);
+    app.use('/login',loginRuta);
+    app.use('/sibebar',sidebarRuta);
+    app.use('/reporte',reporteRuta);
+    app.use('/genEncuesta',GenEncuestaRuta);
+    app.use('/datosEncuesta',DatosEncuestaRuta);
+    
+    app.get('/', function(req, res) {
+        res.sendFile(path.join(__dirname, 'dist/SistemEncuesta/index.html'));
+      });
+    
+    
 app.listen(port, function(){
     console.log("Express server listening on port %d in %s modess", this.address().port, app.settings.env);
   });

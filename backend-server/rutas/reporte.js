@@ -8,6 +8,7 @@ app.get('/',(req,res)=>{
     var skip = req.query.skip || 0;
     skip = Number(skip);
     reporte.find({},'fecha dineroGas dineroGan sucursal usuario').populate('usuario').limit(20).skip(skip).exec((err,reporte)=>{
+        
         if (err){
         return    res.status(500).json({
                 status:true,
