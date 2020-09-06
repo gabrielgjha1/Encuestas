@@ -57,9 +57,11 @@ app.use(function(req, res, next) {
     app.use('/genEncuesta',GenEncuestaRuta);
     app.use('/datosEncuesta',DatosEncuestaRuta);
     
-    app.get('/', function(req, res) {
-        res.sendFile(path.join(__dirname, 'dist/SistemEncuesta/index.html'));
-      });
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'dist/SistemEncuesta/index.html'));
+    });
+
+    
     
     
 app.listen(port, function(){
