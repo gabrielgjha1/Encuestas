@@ -33,7 +33,7 @@
     "connect-multiparty": "^2.2.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.9.16",
     "ng2-charts": "^2.3.2",
     "ngx-spinner": "^9.0.2",
